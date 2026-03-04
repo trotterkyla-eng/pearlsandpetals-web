@@ -1,29 +1,26 @@
 import "./globals.css";
+import type { ReactNode } from "react";
 import PWARegister from "./PWARegister";
 
 export const metadata = {
   title: "Pearls & Petals",
   description: "A private sanctuary where women flourish together.",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#F4DDE6",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Pearls & Petals",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="manifest" href="/manifest.webmanifest" />
-        <meta name="theme-color" content="#F4DDE6" />
-
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Pearls & Petals" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
-
-      <body>
+      <body className="bg-pearl-50 text-ink">
         <PWARegister />
         {children}
       </body>
