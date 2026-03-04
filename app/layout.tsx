@@ -1,4 +1,4 @@
-import "./globals.css";
+import PWARegister from "./PWARegister";
 
 export const metadata = {
   title: "Pearls & Petals",
@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   </head>
 
   <body className="bg-pearl-50 text-ink">
+    <PWARegister />
     {children}
   </body>
 </html>
