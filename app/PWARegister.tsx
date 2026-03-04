@@ -5,7 +5,9 @@ import { useEffect } from "react";
 export default function PWARegister() {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {});
+      navigator.serviceWorker.register("/sw.js").catch(() => {
+        // no-op (avoid breaking the app if SW fails)
+      });
     }
   }, []);
 
