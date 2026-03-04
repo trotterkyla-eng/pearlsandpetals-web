@@ -1,3 +1,4 @@
+import DiscreetToggle from "@/components/DiscreetToggle";
 "use client";
 
 import { useEffect } from "react";
