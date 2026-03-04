@@ -1,0 +1,14 @@
+{
+  "name": "Pearls & Petals",
+  "short_name": "Pearls & Petals",
+  "description": "Pearls & Petals private sanctuary web app.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF7FA",
+  "theme_color": "#F4DDE6",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
