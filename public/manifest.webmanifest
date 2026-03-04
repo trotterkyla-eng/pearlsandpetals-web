@@ -1,7 +1,7 @@
 {
   "name": "Pearls & Petals",
   "short_name": "Pearls & Petals",
-  "description": "Pearls & Petals private sanctuary web app.",
+  "description": "A private sanctuary where women flourish together.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
