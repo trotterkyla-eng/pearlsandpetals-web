@@ -1,3 +1,4 @@
+<AppSplash />
 import Link from "next/link";
 import { Shell } from "@/components/Shell";
 import { CrestCard } from "@/components/CrestCard";
