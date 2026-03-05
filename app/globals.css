@@ -10,3 +10,14 @@ html, body { height: 100%; }
   50% { transform: translateY(-10px); opacity: 1; }
   100% { transform: translateY(0px); opacity: 0.85; }
 }
+
+.sparkleField{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .55;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.35), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.25), transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.18), transparent 50%);
+}
