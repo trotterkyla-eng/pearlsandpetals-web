@@ -21,3 +21,28 @@ html, body { height: 100%; }
     radial-gradient(circle at 70% 60%, rgba(255,255,255,.25), transparent 45%),
     radial-gradient(circle at 40% 80%, rgba(255,255,255,.18), transparent 50%);
 }
+
+.bg-garden {
+  background:
+    radial-gradient(1200px 800px at 50% 20%, rgba(255, 240, 248, 0.95), rgba(255, 240, 248, 0.65)),
+    radial-gradient(900px 600px at 30% 70%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)),
+    #fde8f2;
+}
+
+.text-ink {
+  color: rgba(46, 35, 39, 0.92);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.85rem 1.25rem;
+  background: rgba(199, 78, 110, 0.95);
+  color: white;
+  box-shadow: 0 10px 30px rgba(199, 78, 110, 0.25);
+}
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
