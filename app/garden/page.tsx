@@ -1,6 +1,6 @@
 import styles from "./garden.module.css";
-import OrnateCard from "@/components/OrnateCard";
-import SparkleField from "@/components/SparkleField";
+import { OrnateCard } from "../../components/OrnateCard";
+import { SparkleField } from "../../components/SparkleField";
 import Link from "next/link";
 
 export default function GardenPage() {
