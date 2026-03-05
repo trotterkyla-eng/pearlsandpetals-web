@@ -4,3 +4,9 @@
 
 :root { color-scheme: light; }
 html, body { height: 100%; }
+
+@keyframes sparkleDrift {
+  0% { transform: translateY(0px); opacity: 0.85; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.85; }
+}
