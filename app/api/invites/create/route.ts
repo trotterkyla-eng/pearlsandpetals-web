@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       token,
       code: token,
       name: name || null,
-      status: "pending",
+      status: "unused",
     });
 
     if (error) {
