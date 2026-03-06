@@ -29,10 +29,11 @@ export async function getInviteStatus(token: string): Promise<InviteStatus> {
     }
 
     if (!data) return "missing";
-    if (data.status === "used") return "used";
-    if (data.status !== "unused") return "missing";
 
-    return "ok";
+    if (data.status === "used") return "used";
+    if (data.status === "unused") return "ok";
+
+    return "missing";
   } catch (err) {
     console.error("getInviteStatus fatal error:", err);
     return "error";
