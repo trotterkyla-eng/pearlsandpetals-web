@@ -12,6 +12,7 @@ export async function getInviteStatus(token: string): Promise<InviteStatus> {
 
     if (error) return "error";
     if (!data) return "missing";
+
     if (data.status === "used") return "used";
     if (data.status !== "unused") return "missing";
 
