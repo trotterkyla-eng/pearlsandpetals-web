@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 
@@ -151,7 +151,7 @@ function Divider() {
   );
 }
 
-export default function JoinPage() {
+function JoinForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const token = searchParams.get("token") ?? "";
@@ -343,5 +343,17 @@ export default function JoinPage() {
         </p>
       </div>
     </main>
+  );
+}
+
+export default function JoinPage() {
+  return (
+    <Suspense fallback={
+      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#fdf6f0" }}>
+        <p style={{ fontFamily: "Cinzel, serif", color: "#b8965a", fontSize: 12, letterSpacing: "0.2em" }}>Opening the garden...</p>
+      </main>
+    }>
+      <JoinForm />
+    </Suspense>
   );
 }
