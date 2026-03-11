@@ -1,44 +1,48 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
-export default {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+const config: Config = {
+  content: [
+    './app/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './lib/**/*.{ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
-        pearl: {
-          50: "#FFF7FA",
-          100: "#FBEAF1",
-          200: "#F4DDE6",
-          300: "#EEC8D6",
-        },
-        rose: {
-          100: "#F6D5DD",
-          200: "#E9B3C1",
-          500: "#B35B72",
-        },
-        champagne: {
-          200: "#F3E5C9",
-          400: "#D6B77E",
-          600: "#B48E4E",
-        },
-        ink: "#2A2528",
+        cream:  '#fdf6f0',
+        blush:  '#f2ddd5',
+        rose:   '#d4a0a0',
+        dusty:  '#c8a5a5',
+        gold:   '#b8965a',
+        'gold-light': '#d4b07a',
+        bark:   '#6b4c3b',
+        petal:  '#f9ece8',
       },
       fontFamily: {
-        serif: ["ui-serif", "Georgia", "serif"],
-        sans: ["ui-sans-serif", "system-ui", "sans-serif"],
-      },
-      boxShadow: {
-        soft: "0 10px 40px rgba(42,37,40,0.10)",
-        card: "0 8px 24px rgba(42,37,40,0.08)",
+        cinzel:   ['Cinzel', 'serif'],
+        garamond: ['Cormorant Garamond', 'EB Garamond', 'serif'],
       },
       borderRadius: {
-        xl2: "1.25rem",
+        '2xl': '1.25rem',
+        '3xl': '1.5rem',
       },
-      backgroundImage: {
-        paper:
-          "radial-gradient(1200px 600px at 50% -10%, rgba(244,221,230,0.85), rgba(255,247,250,0.35) 60%, rgba(255,255,255,0) 100%)",
+      animation: {
+        'fade-up': 'fadeUp 0.7s ease forwards',
+        'bloom':   'bloom 0.5s ease forwards',
+      },
+      keyframes: {
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(16px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        bloom: {
+          from: { opacity: '0', transform: 'scale(0.95)' },
+          to:   { opacity: '1', transform: 'scale(1)' },
+        },
       },
     },
   },
   plugins: [],
-} satisfies Config;
+}
+
+export default config
