@@ -48,8 +48,8 @@ export async function markInviteUsed(token: string) {
   const supabase = getServerSupabase();
 
   return supabase
-    .from("invites")
+     .from("invite_tokens")
     .update({ status: "used" })
-    .eq("token", token)
+    .eq("slug", token)
     .eq("status", "unused");
 }
