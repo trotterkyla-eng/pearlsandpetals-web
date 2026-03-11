@@ -17,21 +17,25 @@ export async function getInviteStatus(token: string): Promise<InviteStatus> {
   try {
     const supabase = getServerSupabase();
 
-    const { data, error } = await supabase
-      .from("invites")
-      .select("id, status")
-      .eq("token", token)
-      .maybeSingle();
+   const { data, error } = await supabase
+  .from("invite_tokens")
+  .select("id, status, expires_at, use_count, use_limit")
+  .eq("slug", token)
+  .maybeSingle();
 
-    if (error) {
-      console.error("getInviteStatus Supabase error:", error);
-      return "error";
-    }
+if (error) {
+  console.error("getInviteStatus Supabase error:", error);
+  return "error";
+}
 
-    if (!data) return "missing";
+if (!data) return "missing";
 
-    if (data.status === "used") return "used";
-    if (data.status === "unused") return "ok";
+if (data.status === "used") return "used";
+if (
+  data.status === "active" &&
+  new Date(data.expires_at) > new Date() &&
+  data.use_count < data.use_limit
+) return "ok";
 
     return "missing";
   } catch (err) {
